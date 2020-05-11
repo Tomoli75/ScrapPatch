@@ -75,11 +75,11 @@ class gui extends JFrame {
                     fc.showOpenDialog(null);
                     fc.addActionListener(event2->{
                         try {
-                            f.set(fc.getSelectedFile());
-                            path.set(fc.getSelectedFile().getParent());
-                            if (f.get().delete()) {
-                                if (f.get().createNewFile()) {
-                                    FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
+                            File f2 = fc.getSelectedFile();
+                            String path2 = fc.getSelectedFile().getParent();
+                            if (f2.delete()) {
+                                if (f2.createNewFile()) {
+                                    FileWriter w = new FileWriter(path2 + "\\SurvivalGame.lua");
                                     w.write(normalLua);
                                     w.close();
                                     showMessageDialog(null, "Successfully patched!");
@@ -119,11 +119,11 @@ class gui extends JFrame {
                     fc.showOpenDialog(null);
                     fc.addActionListener(event2->{
                         try {
-                            f.set(fc.getSelectedFile());
-                            path.set(fc.getSelectedFile().getParent());
-                            if (f.get().delete()) {
-                                if (f.get().createNewFile()) {
-                                    FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
+                            File f2 = fc.getSelectedFile();
+                            String path2 = fc.getSelectedFile().getParent();
+                            if (f2.delete()) {
+                                if (f2.createNewFile()) {
+                                    FileWriter w = new FileWriter(path2 + "\\SurvivalGame.lua");
                                     w.write(patchLua);
                                     w.close();
                                     showMessageDialog(null, "Successfully patched!");
