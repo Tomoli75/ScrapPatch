@@ -1,9 +1,6 @@
 package com.tomoli75.scrappatch;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Desktop;
 import java.io.File;
@@ -13,6 +10,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static javax.swing.JOptionPane.*;
 
@@ -24,7 +22,8 @@ public class ScrapPatch {
 class gui extends JFrame {
     gui()
     {
-        String path = System.getenv("ProgramFiles")+"\\Steam\\steamapps\\common\\Scrap Mechanic\\Survival\\Scripts\\game";
+        AtomicReference<String> path = new AtomicReference<>(System.getenv("ProgramFiles") + "\\Steam\\steamapps\\common\\Scrap Mechanic\\Survival\\Scripts\\game");
+        System.out.println(path.get());
         JPanel pa = new JPanel();
         pa.setLayout(new BorderLayout());
         JLabel credit = new JLabel("ScrapPatch by Tomoli75.");
@@ -56,14 +55,43 @@ class gui extends JFrame {
         normal.addActionListener(event->{
             try {
                 String normalLua = new Scanner(new URL("https://raw.githubusercontent.com/Tomoli75/ScrapPatch/master/normal.lua").openStream(), "UTF-8").useDelimiter("\\A").next();
-                File f = new File(path+"\\SurvivalGame.lua");
-                if(f.delete()) {
-                    if(f.createNewFile()) {
-                        FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
-                        w.write(normalLua);
-                        w.close();
-                        showMessageDialog(null,"Successfully removed patch!");
+                AtomicReference<File> f = new AtomicReference<>(new File(path + "\\SurvivalGame.lua"));
+                if(f.get().exists()) {
+                    if (f.get().delete()) {
+                        if (f.get().createNewFile()) {
+                            FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
+                            w.write(normalLua);
+                            w.close();
+                            showMessageDialog(null, "Successfully removed patch!");
+                        } else {
+                            showMessageDialog(null, "Couldn't create the new file.");
+                        }
+                    } else {
+                        showMessageDialog(null, "Couldn't delete old file.");
                     }
+                }  else {
+                    final JFileChooser fc = new JFileChooser();
+                    fc.setDialogTitle("Select the SurvivalGame.lua file.");
+                    fc.showOpenDialog(null);
+                    fc.addActionListener(event2->{
+                        try {
+                            f.set(fc.getSelectedFile());
+                            path.set((String)fc.getSelectedFile().getParent());
+                            if (f.get().delete()) {
+                                if (f.get().createNewFile()) {
+                                    FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
+                                    w.write(normalLua);
+                                    w.close();
+                                    showMessageDialog(null, "Successfully patched!");
+                                } else {
+                                    showMessageDialog(null, "Couldn't create the new file.");
+                                }
+                            } else {
+                                showMessageDialog(null, "Couldn't delete old file.");
+                            }
+                        } catch(IOException ignored) {
+                        }
+                    });
                 }
             } catch (IOException ignored) {
             }
@@ -71,14 +99,43 @@ class gui extends JFrame {
         patch.addActionListener(event->{
             try {
                 String patchLua = new Scanner(new URL("https://raw.githubusercontent.com/Tomoli75/ScrapPatch/master/patch.lua").openStream(), "UTF-8").useDelimiter("\\A").next();
-                File f = new File(path+"\\SurvivalGame.lua");
-                if(f.delete()) {
-                    if(f.createNewFile()) {
-                        FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
-                        w.write(patchLua);
-                        w.close();
-                        showMessageDialog(null,"Successfully patched!");
+                AtomicReference<File> f = new AtomicReference<>(new File(path + "\\SurvivalGame.lua"));
+                if(f.get().exists()) {
+                    if (f.get().delete()) {
+                        if (f.get().createNewFile()) {
+                            FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
+                            w.write(patchLua);
+                            w.close();
+                            showMessageDialog(null, "Successfully patched!");
+                        } else {
+                            showMessageDialog(null, "Couldn't create the new file.");
+                        }
+                    } else {
+                        showMessageDialog(null, "Couldn't delete old file.");
                     }
+                } else {
+                    final JFileChooser fc = new JFileChooser();
+                    fc.setDialogTitle("Select the SurvivalGame.lua file.");
+                    fc.showOpenDialog(null);
+                    fc.addActionListener(event2->{
+                        try {
+                            f.set(fc.getSelectedFile());
+                            path.set((String)fc.getSelectedFile().getParent());
+                            if (f.get().delete()) {
+                                if (f.get().createNewFile()) {
+                                    FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
+                                    w.write(patchLua);
+                                    w.close();
+                                    showMessageDialog(null, "Successfully patched!");
+                                } else {
+                                    showMessageDialog(null, "Couldn't create the new file.");
+                                }
+                            } else {
+                                showMessageDialog(null, "Couldn't delete old file.");
+                            }
+                        } catch(IOException ignored) {
+                        }
+                    });
                 }
             } catch (IOException ignored) {
             }
