@@ -3,7 +3,7 @@
 ### [Releases](https://github.com/Tomoli75/ScrapPatch/releases)
 User-friendly way to enable commands in Scrap Mechanic survival.
 ## Commands
-Key Commands are marked with a *
+Key Commands are marked with a *\
 \* /god - Mechanic characters will take no damage\
 \* /limited - Use the limited inventory\
 \* /unlimited - Use the unlimited inventory\
