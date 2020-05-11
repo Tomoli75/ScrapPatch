@@ -3,6 +3,13 @@
 ### [Releases](https://github.com/Tomoli75/ScrapPatch/releases)
 User-friendly way to enable commands in Scrap Mechanic survival.
 ## Commands
+### Key Commands
+/god - Mechanic characters will take no damage\
+/limited - Use the limited inventory\
+/unlimited - Use the unlimited inventory\
+/components - Give <quantity> components (default 10)\
+/glowsticks - Give <quantity> components (default 10)
+### All Commands
 /ammo - Give ammo (default 40)\
 /spudgun - Give the spudgun\
 /gatling - Give the potato gatling gun\
@@ -47,4 +54,4 @@ User-friendly way to enable commands in Scrap Mechanic survival.
 /camera - Spawn a SplineCamera tool\
 /printglobals - Print all global lua variables\
 /clearpathnodes - Clear all path nodes in overworld\
-/enablepathpotatoes - Creates path nodes at potato hits in overworld and links to previous node\
+/enablepathpotatoes - Creates path nodes at potato hits in overworld and links to previous node
