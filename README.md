@@ -31,7 +31,7 @@ User-friendly way to enable commands in Scrap Mechanic survival.
 /export - Exports blueprint $SURVIVAL_DATA/LocalBlueprints/<name>.blueprint\
 /import - Imports blueprint $SURVIVAL_DATA/LocalBlueprints/<name>.blueprint\
 /starterkit - Spawn a starter kit\
-/mechanicstartkit\Spawn a starter kit for starting at mechanic station\
+/mechanicstartkit Spawn a starter kit for starting at mechanic station\
 /pipekit - Spawn a pipe kit\
 /foodkit - Spawn a food kit\
 /seedkit - Spawn a seed kit\
