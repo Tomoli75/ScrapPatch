@@ -48,4 +48,4 @@ Key Commands are marked with a *\
 /camera - Spawn a SplineCamera tool\
 /printglobals - Print all global lua variables\
 /clearpathnodes - Clear all path nodes in overworld\
-/enablepathpotatoes - Creates path nodes at potato hits in overworld and links to previous node\
+/enablepathpotatoes - Creates path nodes at potato hits in overworld and links to previous node
