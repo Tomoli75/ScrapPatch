@@ -3,13 +3,12 @@
 ### [Releases](https://github.com/Tomoli75/ScrapPatch/releases)
 User-friendly way to enable commands in Scrap Mechanic survival.
 ## Commands
-### Key Commands
-/god - Mechanic characters will take no damage\
-/limited - Use the limited inventory\
-/unlimited - Use the unlimited inventory\
-/components - Give <quantity> components (default 10)\
-/glowsticks - Give <quantity> components (default 10)
-### All Commands
+Key Commands are marked with a *
+* /god - Mechanic characters will take no damage\
+* /limited - Use the limited inventory\
+* /unlimited - Use the unlimited inventory\
+* /components - Give <quantity> components (default 10)\
+* /glowsticks - Give <quantity> components (default 10)
 /ammo - Give ammo (default 40)\
 /spudgun - Give the spudgun\
 /gatling - Give the potato gatling gun\
@@ -18,15 +17,10 @@ User-friendly way to enable commands in Scrap Mechanic survival.
 /baguette - Give 1 revival baguette\
 /keycard - Give 1 keycard\
 /powercore - Give 1 powercore\
-/components - Give <quantity> components (default 10)\
-/glowsticks - Give <quantity> components (default 10)\
 /tumble - Set tumble state\
-/god - Mechanic characters will take no damage\
 /respawn - Respawn at last bed (or at the crash site)\
 /encrypt - Restrict interactions in all warehouses\
 /decrypt - Unrestrict interactions in all warehouses\
-/limited - Use the limited inventory\
-/unlimited - Use the unlimited inventory\
 /ambush - Starts a ‘random’ encounter\
 /recreate - Recreate world\
 /timeofday - Sets the time of the day as a fraction (0.5=mid day)\
