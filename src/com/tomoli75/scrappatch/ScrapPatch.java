@@ -76,7 +76,7 @@ class gui extends JFrame {
                     fc.addActionListener(event2->{
                         try {
                             f.set(fc.getSelectedFile());
-                            path.set((String)fc.getSelectedFile().getParent());
+                            path.set(fc.getSelectedFile().getParent());
                             if (f.get().delete()) {
                                 if (f.get().createNewFile()) {
                                     FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
@@ -120,7 +120,7 @@ class gui extends JFrame {
                     fc.addActionListener(event2->{
                         try {
                             f.set(fc.getSelectedFile());
-                            path.set((String)fc.getSelectedFile().getParent());
+                            path.set(fc.getSelectedFile().getParent());
                             if (f.get().delete()) {
                                 if (f.get().createNewFile()) {
                                     FileWriter w = new FileWriter(path + "\\SurvivalGame.lua");
