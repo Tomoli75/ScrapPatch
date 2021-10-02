@@ -1,4 +1,5 @@
 # ScrapPatch
+## The main lua file for this hasn't been updated in a while. Please don't use this!
 ## Info
 ### [Releases](https://github.com/Tomoli75/ScrapPatch/releases)
 User-friendly way to enable commands in Scrap Mechanic survival.
